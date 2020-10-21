@@ -17,7 +17,7 @@ function setup() {
   polygon = Bodies.circle(50,200,20);
   World.add(world,polygon);
 
-  slingshot = new Slingshot(polygon.body,{x:100,y:200});
+  slingshot = new Slingshot(polygon,{x:100,y:200});
 
 
   
@@ -46,15 +46,15 @@ function setup() {
 
 
   function draw() {
-  background(0);
+  background(255);
 
   Engine.update(engine)
   
   ground.display();
   platform.display();
 
-  polygon.display();
-
+  //polygon.display();
+  ellipse(polygon.position.x,polygon.position.y,20,20);
   slingshot.display();
   
   box1.display();
@@ -76,9 +76,6 @@ function setup() {
   box15.display();
   
   box16.display();
-
-  mouseDragged();
-  mouseReleased();
   
   drawSprites();
 }
